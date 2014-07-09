@@ -29,6 +29,8 @@
  * This interface is _not_ thread-safe, except for |run_task|.
  */
 
+#include "loop.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,7 +42,7 @@ void
 uninit_task_queue(void);
 
 int
-run_task(int (*func)(void*), void* data);
+run_task(enum ioresult (*func)(void*), void* data);
 
 #ifdef __cplusplus
 }
